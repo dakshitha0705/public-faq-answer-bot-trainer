@@ -235,18 +235,157 @@ def milestone_2(model, r: int = 8, alpha: int = 16) -> dict:
 
 
 # --- Milestone 3: Build a Streamlit interface where users can ask questions and get answers.
-# Hint: Develop a user interface using Streamlit to interact with the model.
-def milestone_3():  # TODO(milestone 3)
-    raise NotImplementedError("TODO(milestone 3)")
+STOP = set("a an the is are be to of in on at for and or by do does i my me can how what when where which who "
+           "will it its you your we our with from if this that there get much any as up per each".split())
+
+
+def generate_answer(model, tok, question: str, max_new_tokens: int = 48) -> str:
+    """Greedy-decode an answer to 'Question: …\\nAnswer:'; keep only the first line."""
+    torch = _torch()
+    ids = torch.tensor([tok(format_prompt(question))["input_ids"]])
+    with torch.no_grad():
+        out = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids), max_new_tokens=max_new_tokens,
+                             do_sample=False, pad_token_id=tok.eos_token_id, eos_token_id=tok.eos_token_id)
+    text = tok.decode(out[0, ids.shape[1]:].tolist(), skip_special_tokens=True)
+    return text.strip().split("\n")[0].split("Question:")[0].strip()
+
+
+def _words(text: str) -> set[str]:
+    return {w.strip(".,:;?!") for w in re.findall(r"[a-z0-9$%:\-]+", text.lower())} - STOP - {""}
+
+
+def find_section(text: str, sections: dict[str, str]) -> dict:
+    """Which guideline section (and line) best supports `text`? IDF-weighted word overlap; no model needed."""
+    import math
+    bags = {t: _words(t + " " + b) for t, b in sections.items()}
+    df = {w: sum(w in bag for bag in bags.values()) for w in set().union(*bags.values())}
+    idf = {w: math.log(1 + len(bags) / d) for w, d in df.items()}
+    q = _words(text)
+    scores = {t: sum(idf[w] for w in q & bag) for t, bag in bags.items()}
+    title = max(scores, key=scores.get)
+    lines = [ln.lstrip("- ").strip() for ln in sections[title].splitlines() if ln.strip()]
+    line = max(lines, key=lambda ln: sum(idf.get(w, 0) for w in q & _words(ln))) if lines else ""
+    return {"section": title, "line": line, "score": round(scores[title], 2)}
+
+
+def milestone_3(model, tok, question: str, sections: dict[str, str] | None = None) -> dict:
+    """Answer a question and attach the supporting guideline section."""
+    answer = generate_answer(model, tok, question)
+    return {"question": question, "answer": answer, **find_section(question + " " + answer, sections or load_sections())}
 
 
 # --- Milestone 4: Verify the accuracy and relevance of the generated answers.
-# Hint: Evaluate the model's responses for accuracy and relevance.
-def milestone_4():  # TODO(milestone 4)
-    raise NotImplementedError("TODO(milestone 4)")
+def fact_accuracy(answer: str, facts: list[str]) -> float:
+    """Share of required key facts (case-insensitive substrings) present in the answer."""
+    return sum(f.lower() in answer.lower() for f in facts) / len(facts)
+
+
+def numbers(text: str) -> set[str]:
+    """Numbers as written: '$150', '8:30', '555-0142', '20%'."""
+    return {n.rstrip(".,-") for n in re.findall(r"\$?\d+(?:[:.,\-]\d+)*%?", text)}
+
+
+def numbers_exact(answer: str, reference: str) -> bool:
+    """True when the answer states exactly the reference's numbers — none missing, none invented."""
+    return numbers(answer) == numbers(reference)
+
+
+def _toks(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9$%:\-]+", text.lower())
+
+
+def token_f1(pred: str, ref: str) -> float:
+    from collections import Counter
+    p, r = _toks(pred), _toks(ref)
+    common = sum((Counter(p) & Counter(r)).values())
+    if not common:
+        return 0.0
+    prec, rec = common / len(p), common / len(r)
+    return 2 * prec * rec / (prec + rec)
+
+
+def rouge_l(pred: str, ref: str) -> float:
+    """ROUGE-L F1 via token-level longest common subsequence."""
+    p, r = _toks(pred), _toks(ref)
+    if not p or not r:
+        return 0.0
+    dp = [[0] * (len(r) + 1) for _ in range(len(p) + 1)]
+    for i, a in enumerate(p):
+        for j, b in enumerate(r):
+            dp[i + 1][j + 1] = dp[i][j] + 1 if a == b else max(dp[i][j + 1], dp[i + 1][j])
+    lcs = dp[-1][-1]
+    if not lcs:
+        return 0.0
+    prec, rec = lcs / len(p), lcs / len(r)
+    return 2 * prec * rec / (prec + rec)
+
+
+def is_relevant(answer: str, section: str, sections: dict[str, str]) -> bool:
+    """The answer on its own maps to the right guideline topic."""
+    hit = find_section(answer, sections)
+    return hit["score"] > 0 and hit["section"] == section
+
+
+def score_answer(answer: str, row: dict, sections: dict[str, str]) -> dict:
+    return {"fact_acc": fact_accuracy(answer, row["facts"]), "numbers_exact": numbers_exact(answer, row["reference"]),
+            "token_f1": token_f1(answer, row["reference"]), "rouge_l": rouge_l(answer, row["reference"]),
+            "relevant": is_relevant(answer, row["section"], sections)}
+
+
+def summarize(scored: list[dict]) -> dict:
+    n = len(scored)
+    return {"n": n, "fact_acc": sum(s["fact_acc"] for s in scored) / n,
+            "all_facts": sum(s["fact_acc"] == 1 for s in scored) / n,
+            "numbers_exact": sum(s["numbers_exact"] for s in scored) / n,
+            "token_f1": sum(s["token_f1"] for s in scored) / n, "rouge_l": sum(s["rouge_l"] for s in scored) / n,
+            "relevance": sum(s["relevant"] for s in scored) / n}
+
+
+def milestone_4(model, tok, rows: list[dict], sections: dict[str, str] | None = None) -> tuple[dict, list[dict]]:
+    """Answer every row and score it. Returns (summary, per-question details)."""
+    sections = sections or load_sections()
+    details = []
+    for r in rows:
+        ans = generate_answer(model, tok, r["question"])
+        details.append({"question": r["question"], "reference": r["reference"], "section": r["section"],
+                        "facts": r["facts"], "answer": ans, **score_answer(ans, r, sections)})
+    return summarize(details), details
 
 
 # --- Milestone 5: Implement adapter merging for inference.
-# Hint: Use the `lfllm-lflora` technique to merge the LoRA adapter for optimized inference.
-def milestone_5():  # TODO(milestone 5)
-    raise NotImplementedError("TODO(milestone 5)")
+def merge_lora(model):
+    """In place: W += (alpha/r)·B·A for every LoRALinear, then swap the wrapper for its plain base module."""
+    names = [n for n, m in model.named_modules() if is_lora(m)]
+    for name in names:
+        parent_name, child = name.rsplit(".", 1)
+        parent = model.get_submodule(parent_name)
+        setattr(parent, child, getattr(parent, child).merged())
+    for p in model.parameters():
+        p.requires_grad = False
+    if hasattr(model, "lora_config"):
+        del model.lora_config
+    return model.eval()
+
+
+def max_logit_diff(a, b, input_ids) -> float:
+    torch = _torch()
+    with torch.no_grad():
+        return (a(input_ids).logits - b(input_ids).logits).abs().max().item()
+
+
+def save_merged(model, tok, path=MERGED_DIR) -> Path:
+    path = Path(path)
+    model.save_pretrained(path)
+    tok.save_pretrained(path)
+    return path
+
+
+def load_merged(path=MERGED_DIR):
+    return load_base(str(path))
+
+
+def milestone_5(lora_model, sample_ids) -> tuple[object, float]:
+    """Merge a LoRA model into a plain copy and report max |logit diff| merged vs unmerged."""
+    import copy
+    merged = merge_lora(copy.deepcopy(lora_model))
+    return merged, max_logit_diff(lora_model, merged, sample_ids)

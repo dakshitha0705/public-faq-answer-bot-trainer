@@ -99,18 +99,63 @@ def test_milestone_2_lora_also_wraps_plain_linear():
 
 
 # Milestone 3: Build a Streamlit interface where users can ask questions and get answers.
-@pytest.mark.skip(reason="remove this line when you start milestone 3")
-def test_milestone_3():
-    raise NotImplementedError("write the test for milestone 3")
+def test_milestone_3_generates_single_line_answer_with_section():
+    res = core.milestone_3(tiny_model(), CharTok(), "When is my water bill due?")
+    assert isinstance(res["answer"], str) and "\n" not in res["answer"]
+    assert res["section"] in core.load_sections()
+
+
+def test_milestone_3_section_lookup_finds_the_right_guideline():
+    sections = core.load_sections()
+    test = core.load_jsonl(core.TEST_FILE)
+    hits = sum(core.find_section(r["question"] + " " + r["reference"], sections)["section"] == r["section"] for r in test)
+    assert hits / len(test) >= 0.9
+    assert "$60" in core.find_section("parking permit cost $60", sections)["line"]
+
+
+def test_milestone_3_app_uses_core_api():
+    src = open("app/main.py", encoding="utf-8").read()
+    for name in ("load_adapter", "generate_answer", "milestone_3", "train_lora", "Fictional demo department"):
+        assert name in src
 
 
 # Milestone 4: Verify the accuracy and relevance of the generated answers.
-@pytest.mark.skip(reason="remove this line when you start milestone 4")
-def test_milestone_4():
-    raise NotImplementedError("write the test for milestone 4")
+def test_milestone_4_metrics():
+    ref = "The main service centre is open Monday to Friday from 8:30 AM to 4:30 PM."
+    assert core.fact_accuracy("Open 8:30 am to 5 pm.", ["8:30 AM", "4:30 PM"]) == 0.5
+    assert core.numbers("Call 555-0142, pay $150 or 20%.") == {"555-0142", "$150", "20%"}
+    assert core.numbers_exact("From 8:30 AM to 4:30 PM.", ref) and not core.numbers_exact("8:30 to 5:00", ref)
+    assert core.token_f1(ref, ref) == 1.0 and core.rouge_l(ref, ref) == 1.0
+    assert core.token_f1("", ref) == 0.0 and 0 < core.rouge_l("open Monday to Friday", ref) < 1
+    sections = core.load_sections()
+    assert core.is_relevant("Recycling is collected every two weeks.", "Waste Collection", sections)
+    assert not core.is_relevant("The the the.", "Waste Collection", sections)
+
+
+def test_milestone_4_evaluation_scores_every_row():
+    rows = core.load_jsonl(core.TEST_FILE)[:2]
+    summary, details = core.milestone_4(tiny_model(), CharTok(), rows)
+    assert summary["n"] == 2 and len(details) == 2
+    assert all(0 <= summary[k] <= 1 for k in ("fact_acc", "numbers_exact", "token_f1", "rouge_l", "relevance"))
 
 
 # Milestone 5: Implement adapter merging for inference.
-@pytest.mark.skip(reason="remove this line when you start milestone 5")
-def test_milestone_5():
-    raise NotImplementedError("write the test for milestone 5")
+def test_milestone_5_merged_equals_unmerged(tmp_path):
+    import torch
+    model, tok = tiny_model(), CharTok()
+    n_base = core.count_params(model)[1]
+    core.inject_lora(model, r=4, alpha=8)
+    core.train_lora(model, tok, ROWS, steps=10, lr=1e-2, batch_size=4)
+    with torch.no_grad():  # make sure the adapter is far from identity before testing the merge
+        for n, p in model.named_parameters():
+            if "lora_B" in n:
+                p.add_(torch.randn_like(p) * 0.1)
+    merged, diff = core.milestone_5(model, _ids())
+    assert diff < 1e-4
+    assert not any(core.is_lora(m) for m in merged.modules())
+    assert core.count_params(merged)[1] == n_base  # no extra params after merging
+    assert core.max_logit_diff(model, tiny_model(), _ids()) > 1e-3  # the adapter really changed the model
+    assert core.generate_answer(model, tok, "Bin day?") == core.generate_answer(merged, tok, "Bin day?")
+    merged.save_pretrained(tmp_path)
+    from transformers import GPT2LMHeadModel
+    assert core.max_logit_diff(merged, GPT2LMHeadModel.from_pretrained(tmp_path).eval(), _ids()) < 1e-6
