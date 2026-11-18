@@ -2,50 +2,58 @@
 
 [![Built with askThili](https://ask.thili.ai/api/v1/public/projects/j4m2zsbz26/badge.svg)](https://ask.thili.ai/b/j4m2zsbz26)
 
-This project, 'Public FAQ Answer Bot Trainer', enables public service administrators to train a language model using LoRA. The goal is to provide accurate answers to frequently asked questions based on specific departmental guidelines, thereby reducing the inquiry load. You will adapt a pre-trained LLM using the lfllm-lflora technique, demonstrating its ability to generate precise and relevant FAQ responses.
+An admin fine-tunes **distilgpt2** with a **hand-written LoRA adapter** so it answers public-service FAQs from a
+departmental guideline document. The adapter is then merged into the base weights for inference. Everything runs locally on a laptop CPU: no API keys and no `.env`.
 
-## What you are building
+> **Data note.** "Riverside City Services Department" is **fictional**. `data/guidelines.md` and all Q&A pairs are
+> synthetic and were written for this demo. None of the fees, phone numbers or rules are real.
 
-**Goal.** You will build a system that allows public service administrators to train a language model using LoRA to provide accurate answers to frequently asked questions, reducing inquiry load. The system will generate accurate FAQ answers after training and merging a LoRA adapter.
+## How it works
+- `data/guidelines.md`: 9 sections (office hours, building/event permits, waste, water bills, ID cards, parking, dogs, appeals).
+  `data/faqs.jsonl` has 135 training Q&A pairs (45 facts × 3 phrasings). `data/test.jsonl` has 37 held-out **paraphrased** questions with the key facts each answer must contain. Every fact is validated against the guidelines.
+- `app/core.py`: `LoRALinear` (frozen W + B·A·α/r, with B initialised to 0) wraps GPT-2's `Conv1D` in attention `c_attn`/`c_proj`. The prompt format is
+  `Question: …\nAnswer: …<eos>`, with loss on answer tokens only. Also contains the metrics and `merge_lora` (W += B·A·α/r, which removes the wrappers).
+- `app/main.py`: Streamlit app. It shows base vs LoRA answers side by side and the supporting guideline section, with an admin tab for retraining.
 
-**Done when.** The project is done when you have successfully used the LoRA fine-tuning technique from lfllm-lflora to adapt a pre-trained LLM, and the system can generate accurate and relevant answers to public service FAQs, verified against departmental guidelines.
-
-## Milestones
-
-Tick these off as you go, and commit after each one.
-
-- [ ] **1. Create a small dataset of public service FAQs and their answers.**  
-      Hint: Prepare a small dataset of FAQs and answers.
-- [ ] **2. Implement LoRA adapter injection and training on a pre-trained LLM (e.g., GPT-2).**  
-      Hint: Apply the `lfllm-lflora` technique to inject and train a LoRA adapter on a pre-trained LLM.
-- [ ] **3. Build a Streamlit interface where users can ask questions and get answers.**  
-      Hint: Develop a user interface using Streamlit to interact with the model.
-- [ ] **4. Verify the accuracy and relevance of the generated answers.**  
-      Hint: Evaluate the model's responses for accuracy and relevance.
-- [ ] **5. Implement adapter merging for inference.**  
-      Hint: Use the `lfllm-lflora` technique to merge the LoRA adapter for optimized inference.
-
-## Run it
-
-You need Python 3.12 and git.
-
+## Setup and commands
 ```bash
-python3.12 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env        # then choose a model; see the comments inside
+python -m venv .venv && .venv/Scripts/activate      # source .venv/bin/activate on Linux/macOS
+pip install -r requirements.txt                     # CPU torch
+python scripts/build_dataset.py                     # regenerate data/faqs.jsonl + test.jsonl
+python scripts/train.py --steps 800                 # -> adapters/faq-lora, results/train_log.json, loss.png
+python scripts/evaluate.py                          # -> results/eval.md, eval.json
+python scripts/merge.py                             # -> models/faq-merged, results/merge.json
 streamlit run app/main.py
-pytest
+pytest -q                                           # no downloads: tiny random GPT2Config models
 ```
 
-Your work goes in `app/core.py` (one stub per milestone) and `tests/test_core.py`. The first tests pass already; they
-check the plumbing.
+## Results
+Training: 442,368 of 82.35M params trainable (**0.54%**), r=16, α=32, 800 steps × batch 8, loss 3.25 → 0.005
+(~0.33 s/step on CPU).
 
-## Settings and secrets
+Held-out paraphrased questions (37):
 
-Model settings live in `.env`, which is ignored by git. **Never commit `.env` or paste a key into code.** If a key ever
-reaches GitHub, treat it as leaked and make a new one.
+| Metric | Base distilgpt2 | LoRA |
+|---|---:|---:|
+| Key-fact accuracy | 0.0% | **63.5%** |
+| Answers with all key facts | 0.0% | 62.2% |
+| Exact-number correctness | 10.8% | 62.2% |
+| Token F1 | 10.6% | 69.9% |
+| ROUGE-L F1 | 9.8% | 69.3% |
+| Relevance (right topic) | 37.8% | 86.5% |
 
-## Stretch ideas
+On the training phrasings, LoRA scores 100% on every metric. See [results/eval.md](results/eval.md) for failure analysis.
 
-- Build a Streamlit interface where users can ask questions and get answers from your trained bot.
-- Implement adapter merging for inference to optimize the model for deployment and faster response times.
+Merging (`results/merge.json`): max \|logit diff\| merged vs unmerged is **2.8e-4** across all 37 held-out prompts. That is float32 rounding on
+logits of magnitude ~100 (relative error ~1e-6). The unit test on a tiny model passes at < 1e-4. Greedy answers are identical (5/5), and the merged model reloads exactly (diff 0.0).
+Merged inference has 442k fewer params and is about 1.09× faster per answer on CPU (single timing run, so noisy).
+
+## Screenshots
+_Placeholder: add `docs/screenshot-ask.png` and `docs/screenshot-admin.png`._
+
+## Limits
+- It memorises more than it generalises: 62% of paraphrases are fully correct vs 100% of seen phrasings. Wrong answers are fluent and
+  confident (often a neighbouring FAQ). Always show the supporting guideline line, as the app does. Do not use this unsupervised.
+- The model is tiny (distilgpt2). Metrics are substring/overlap based and the test set is small (37 questions).
+- The Streamlit app currently serves the unmerged LoRA model. `scripts/merge.py` produces `models/faq-merged`, which is numerically equivalent.
+- Weights (`adapters/`, `models/`) are git-ignored. Re-run `scripts/train.py` to recreate them.
