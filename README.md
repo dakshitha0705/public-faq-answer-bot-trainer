@@ -1,3 +1,4 @@
+[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/j4m2zsbz26/badge.svg)](https://ask.thili.ai/b/j4m2zsbz26)
 # Public FAQ Answer Bot Trainer
 
 [![Built with askThili](https://ask.thili.ai/api/v1/public/projects/j4m2zsbz26/badge.svg)](https://ask.thili.ai/b/j4m2zsbz26)
