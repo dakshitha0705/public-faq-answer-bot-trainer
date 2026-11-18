@@ -1,0 +1,2206 @@
+{
+  "base_heldout": {
+    "summary": {
+      "n": 37,
+      "fact_acc": 0.0,
+      "all_facts": 0.0,
+      "numbers_exact": 0.10810810810810811,
+      "token_f1": 0.1059572565179836,
+      "rouge_l": 0.09752235102425456,
+      "relevance": 0.3783783783783784
+    },
+    "details": [
+      {
+        "question": "Which street is the department's main office on?",
+        "reference": "The main service centre is at 14 Harbor Street.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "14 Harbor Street"
+        ],
+        "answer": "The department's main office on the street is the department's main office on.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.33333333333333337,
+        "rouge_l": 0.25,
+        "relevant": true
+      },
+      {
+        "question": "What hours can I visit the service centre on a weekday?",
+        "reference": "The main service centre is open Monday to Friday from 8:30 AM to 4:30 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "8:30 AM",
+          "4:30 PM"
+        ],
+        "answer": "Monday, August 12, 2018",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.10526315789473685,
+        "rouge_l": 0.10526315789473685,
+        "relevant": false
+      },
+      {
+        "question": "Can I come in at the weekend, and at what times on Saturday?",
+        "reference": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "9:00 AM",
+          "12:00 PM"
+        ],
+        "answer": "I can.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "What number do I ring with a general question?",
+        "reference": "The general enquiries phone line is 555-0142 and is answered from 8:00 AM to 6:00 PM on weekdays.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "555-0142",
+          "8:00 AM",
+          "6:00 PM"
+        ],
+        "answer": "I ring with a general question.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.08333333333333333,
+        "rouge_l": 0.08333333333333333,
+        "relevant": true
+      },
+      {
+        "question": "Will the front desk take a cheque as payment?",
+        "reference": "At the counter we accept cash and card. Cheques are not accepted.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "cash",
+          "card",
+          "Cheques are not accepted"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "What will I pay for a permit to build on my residential property?",
+        "reference": "A residential building permit costs $150.",
+        "section": "Building Permits",
+        "facts": [
+          "$150"
+        ],
+        "answer": "I will pay for a permit to build on my residential property.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.3333333333333333,
+        "rouge_l": 0.2222222222222222,
+        "relevant": true
+      },
+      {
+        "question": "What's the charge for a building permit on a commercial site?",
+        "reference": "A commercial building permit costs $400.",
+        "section": "Building Permits",
+        "facts": [
+          "$400"
+        ],
+        "answer": "The permit is for a building permit on a commercial site.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.4705882352941177,
+        "rouge_l": 0.3529411764705882,
+        "relevant": true
+      },
+      {
+        "question": "How many days until my building permit application is processed?",
+        "reference": "Building permit applications are processed within 15 working days.",
+        "section": "Building Permits",
+        "facts": [
+          "15 working days"
+        ],
+        "answer": "I have a lot of work to do. I have a lot of time to do it. I have a lot of time to do it. I have a lot of time to do it. I have a lot of time to do it",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "Which documents have to go in with my building permit request?",
+        "reference": "You must submit a site plan, proof of ownership and your contractor licence number.",
+        "section": "Building Permits",
+        "facts": [
+          "site plan",
+          "proof of ownership",
+          "contractor licence number"
+        ],
+        "answer": "I have a building permit. I have a building permit. I have a building permit. I have a building permit. I have a building permit. I have a building permit. I have a building permit. I have a building permit.",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.03703703703703704,
+        "rouge_l": 0.03703703703703704,
+        "relevant": true
+      },
+      {
+        "question": "What is the validity period of a building permit?",
+        "reference": "A building permit is valid for 12 months.",
+        "section": "Building Permits",
+        "facts": [
+          "12 months"
+        ],
+        "answer": "The validity period of a building permit is the period of a building permit.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.36363636363636365,
+        "rouge_l": 0.36363636363636365,
+        "relevant": true
+      },
+      {
+        "question": "Is it possible to get more time on my building permit, and what does it cost?",
+        "reference": "A building permit can be extended once for 6 months for a fee of $50.",
+        "section": "Building Permits",
+        "facts": [
+          "6 months",
+          "$50"
+        ],
+        "answer": "I have a lot of work to do. I have a lot of time to do it. I have a lot of time to do it. I have a lot of time to do it. I have a lot of time to do it",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.10169491525423728,
+        "rouge_l": 0.10169491525423728,
+        "relevant": false
+      },
+      {
+        "question": "I want to put up a small shed in my yard \u2014 is a permit required?",
+        "reference": "Garden sheds and other structures smaller than 10 square metres do not need a building permit.",
+        "section": "Building Permits",
+        "facts": [
+          "10 square metres"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How early must I request a permit for a public event?",
+        "reference": "Apply for an event permit at least 30 days before the event.",
+        "section": "Event Permits",
+        "facts": [
+          "30 days"
+        ],
+        "answer": "I am not a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "What's the price of a permit to hold an event?",
+        "reference": "An event permit costs $75.",
+        "section": "Event Permits",
+        "facts": [
+          "$75"
+        ],
+        "answer": "The price of a permit to hold an event is the price of a permit to hold an event.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.25,
+        "rouge_l": 0.25,
+        "relevant": true
+      },
+      {
+        "question": "My festival expects a big crowd \u2014 what additional document is needed?",
+        "reference": "Events with more than 500 people must submit a safety plan.",
+        "section": "Event Permits",
+        "facts": [
+          "500 people",
+          "safety plan"
+        ],
+        "answer": "I am not sure. I am not sure. I am not sure. I am not sure. I am not sure. I am not sure. I am not sure. I am not sure. I am not sure. I am not",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "On which days does the garbage truck come for household rubbish?",
+        "reference": "General waste is collected weekly: on Tuesday in the North district and on Thursday in the South district.",
+        "section": "Waste Collection",
+        "facts": [
+          "Tuesday",
+          "Thursday"
+        ],
+        "answer": "On which days does the garbage truck come for household rubbish?",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.13793103448275862,
+        "rouge_l": 0.13793103448275862,
+        "relevant": false
+      },
+      {
+        "question": "How frequently do you pick up the recycling bin?",
+        "reference": "Recycling is collected every two weeks.",
+        "section": "Waste Collection",
+        "facts": [
+          "every two weeks"
+        ],
+        "answer": "No.",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "What day is the green garden-waste bin collected?",
+        "reference": "Garden waste in the green bin is collected on the first Monday of each month.",
+        "section": "Waste Collection",
+        "facts": [
+          "first Monday"
+        ],
+        "answer": "May 31, 2016",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "By what time does my bin need to be out on collection day?",
+        "reference": "Bins must be placed at the kerb by 6:00 AM on collection day and brought in by 8:00 PM.",
+        "section": "Waste Collection",
+        "facts": [
+          "6:00 AM",
+          "8:00 PM"
+        ],
+        "answer": "I have a bin that I can use to collect my bin. I have a bin that I can use to collect my bin. I have a bin that I can use to collect my bin. I have a bin that I can use to",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": true
+      },
+      {
+        "question": "What does it cost to have large items like a sofa taken away?",
+        "reference": "Bulky waste pickup must be booked online and costs $35 for up to 3 items.",
+        "section": "Waste Collection",
+        "facts": [
+          "$35",
+          "3 items"
+        ],
+        "answer": "I think it is a good idea to have a large item like a sofa taken away.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0625,
+        "rouge_l": 0.0625,
+        "relevant": false
+      },
+      {
+        "question": "Someone took my wheelie bin \u2014 how much to replace it?",
+        "reference": "A replacement for a lost or stolen bin costs $40.",
+        "section": "Waste Collection",
+        "facts": [
+          "$40"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "The truck skipped my bin \u2014 what's the time limit to report it?",
+        "reference": "A missed collection must be reported within 48 hours.",
+        "section": "Waste Collection",
+        "facts": [
+          "48 hours"
+        ],
+        "answer": "I'm not sure.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How regularly is a water bill sent out?",
+        "reference": "Water bills are issued every 3 months.",
+        "section": "Water Bills",
+        "facts": [
+          "every 3 months"
+        ],
+        "answer": "The bill is sent out every day.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.14285714285714285,
+        "rouge_l": 0.14285714285714285,
+        "relevant": true
+      },
+      {
+        "question": "How many days do I get to settle my water bill?",
+        "reference": "A water bill must be paid within 21 days of the bill date.",
+        "section": "Water Bills",
+        "facts": [
+          "21 days"
+        ],
+        "answer": "I get to settle my water bill.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.2,
+        "rouge_l": 0.2,
+        "relevant": true
+      },
+      {
+        "question": "What is the penalty for an overdue water bill?",
+        "reference": "A late payment fee of $15 is added to overdue water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "$15"
+        ],
+        "answer": "The penalty for an overdue water bill is the penalty for an overdue water bill.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.22222222222222224,
+        "rouge_l": 0.22222222222222224,
+        "relevant": true
+      },
+      {
+        "question": "Do I get anything off my water bill if I set up automatic payments by direct debit?",
+        "reference": "Customers who pay by direct debit receive a 2% discount.",
+        "section": "Water Bills",
+        "facts": [
+          "2%"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "I'm struggling financially \u2014 can I spread my water bill payments out?",
+        "reference": "Customers in financial hardship can request a payment plan of up to 6 months using form WB-7.",
+        "section": "Water Bills",
+        "facts": [
+          "6 months",
+          "WB-7"
+        ],
+        "answer": "I can.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.10526315789473684,
+        "rouge_l": 0.10526315789473684,
+        "relevant": false
+      },
+      {
+        "question": "As a retiree aged 70, am I entitled to any reduction on my water bill?",
+        "reference": "Residents aged 65 or older receive a 20% concession on water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "65",
+          "20%"
+        ],
+        "answer": "I am entitled to any reduction on my water bill.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.1818181818181818,
+        "rouge_l": 0.1818181818181818,
+        "relevant": true
+      },
+      {
+        "question": "There's water gushing from a broken pipe in the street \u2014 who should I phone?",
+        "reference": "Water leaks and burst pipes should be reported to the 24-hour emergency line 555-0199.",
+        "section": "Water Bills",
+        "facts": [
+          "555-0199"
+        ],
+        "answer": "I'm not going to call the police. I'm going to call the police. I'm going to call the police. I'm going to call the police. I'm going to call the police. I'm going to call the police",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.07017543859649122,
+        "rouge_l": 0.07017543859649122,
+        "relevant": false
+      },
+      {
+        "question": "What's the price of getting a resident ID card for the first time?",
+        "reference": "A new resident ID card costs $25.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "$25"
+        ],
+        "answer": "The price of getting a resident ID card for the first time is $1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.36363636363636365,
+        "rouge_l": 0.36363636363636365,
+        "relevant": true
+      },
+      {
+        "question": "How long until my resident ID card expires and what does renewing it cost?",
+        "reference": "A resident ID card must be renewed every 5 years, and renewal costs $20.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "5 years",
+          "$20"
+        ],
+        "answer": "I have a valid ID card and I have a valid ID card. I have a valid ID card and I have a valid ID card. I have a valid ID card and I have a valid ID card. I have a valid ID card",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.13559322033898305,
+        "rouge_l": 0.13559322033898305,
+        "relevant": true
+      },
+      {
+        "question": "Which documents should I take along when applying for a resident ID card?",
+        "reference": "You must bring photo ID and a proof of address dated within the last 3 months.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "photo ID",
+          "proof of address",
+          "3 months"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How much do I pay each year to park on my street as a resident?",
+        "reference": "A resident parking permit costs $60 per year.",
+        "section": "Parking Permits",
+        "facts": [
+          "$60"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "My friends are visiting \u2014 what parking passes can I buy for them and at what price?",
+        "reference": "A book of 20 visitor day passes costs $10.",
+        "section": "Parking Permits",
+        "facts": [
+          "20",
+          "$10"
+        ],
+        "answer": "I can buy for them and at what price?",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "What does it cost annually to register my dog?",
+        "reference": "Dog registration costs $30 per year, or $15 per year for a desexed dog.",
+        "section": "Dog Registration",
+        "facts": [
+          "$30",
+          "$15"
+        ],
+        "answer": "I am not a dog owner. I am a dog owner. I am a dog owner. I am a dog owner. I am a dog owner. I am a dog owner. I am a dog owner. I am a dog owner",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.1090909090909091,
+        "rouge_l": 0.1090909090909091,
+        "relevant": false
+      },
+      {
+        "question": "After I lodge a complaint, how soon will I hear back?",
+        "reference": "The department responds to complaints within 10 working days.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "10 working days"
+        ],
+        "answer": "I will not be able to answer this question.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.1111111111111111,
+        "rouge_l": 0.1111111111111111,
+        "relevant": false
+      },
+      {
+        "question": "I think my fine was unfair \u2014 how long do I have to challenge it?",
+        "reference": "You can appeal a fine within 28 days of the fine date.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "28 days"
+        ],
+        "answer": "I think I have to challenge it.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      }
+    ]
+  },
+  "base_seen": {
+    "summary": {
+      "n": 37,
+      "fact_acc": 0.0,
+      "all_facts": 0.0,
+      "numbers_exact": 0.13513513513513514,
+      "token_f1": 0.15010342170679725,
+      "rouge_l": 0.13098611610038327,
+      "relevance": 0.5945945945945946
+    },
+    "details": [
+      {
+        "question": "Where is the main service centre?",
+        "reference": "The main service centre is at 14 Harbor Street.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "14 Harbor Street"
+        ],
+        "answer": "The main service centre is the main service centre.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.5555555555555556,
+        "rouge_l": 0.5555555555555556,
+        "relevant": true
+      },
+      {
+        "question": "What are the office opening hours on weekdays?",
+        "reference": "The main service centre is open Monday to Friday from 8:30 AM to 4:30 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "8:30 AM",
+          "4:30 PM"
+        ],
+        "answer": "The office opening hours are on weekdays.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.09090909090909091,
+        "rouge_l": 0.09090909090909091,
+        "relevant": true
+      },
+      {
+        "question": "Is the office open on Saturday?",
+        "reference": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "9:00 AM",
+          "12:00 PM"
+        ],
+        "answer": "No.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "What is the phone number for general enquiries?",
+        "reference": "The general enquiries phone line is 555-0142 and is answered from 8:00 AM to 6:00 PM on weekdays.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "555-0142",
+          "8:00 AM",
+          "6:00 PM"
+        ],
+        "answer": "The phone number is the number of the phone number that you have been asked to call.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.22857142857142856,
+        "rouge_l": 0.22857142857142856,
+        "relevant": true
+      },
+      {
+        "question": "What payment methods are accepted at the counter?",
+        "reference": "At the counter we accept cash and card. Cheques are not accepted.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "cash",
+          "card",
+          "Cheques are not accepted"
+        ],
+        "answer": "The payment method is accepted at the counter.",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.4,
+        "rouge_l": 0.3,
+        "relevant": true
+      },
+      {
+        "question": "How much is a residential building permit?",
+        "reference": "A residential building permit costs $150.",
+        "section": "Building Permits",
+        "facts": [
+          "$150"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How much is a commercial building permit?",
+        "reference": "A commercial building permit costs $400.",
+        "section": "Building Permits",
+        "facts": [
+          "$400"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How long does a building permit take to process?",
+        "reference": "Building permit applications are processed within 15 working days.",
+        "section": "Building Permits",
+        "facts": [
+          "15 working days"
+        ],
+        "answer": "About a year ago, we were working on a project that was going to be a lot longer than we thought it would be. We were working on a project that was going to be a lot longer than we thought it would be. We",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.037037037037037035,
+        "rouge_l": 0.037037037037037035,
+        "relevant": true
+      },
+      {
+        "question": "What documents do I need for a building permit?",
+        "reference": "You must submit a site plan, proof of ownership and your contractor licence number.",
+        "section": "Building Permits",
+        "facts": [
+          "site plan",
+          "proof of ownership",
+          "contractor licence number"
+        ],
+        "answer": "I have a permit. I have a permit. I have a permit. I have a permit. I have a permit. I have a permit. I have a permit. I have a permit. I have a permit. I have a",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.03773584905660377,
+        "rouge_l": 0.03773584905660377,
+        "relevant": true
+      },
+      {
+        "question": "How long is a building permit valid?",
+        "reference": "A building permit is valid for 12 months.",
+        "section": "Building Permits",
+        "facts": [
+          "12 months"
+        ],
+        "answer": "The building permit is valid for a building permit.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.7058823529411765,
+        "rouge_l": 0.5882352941176471,
+        "relevant": true
+      },
+      {
+        "question": "Can I extend my building permit?",
+        "reference": "A building permit can be extended once for 6 months for a fee of $50.",
+        "section": "Building Permits",
+        "facts": [
+          "6 months",
+          "$50"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "Do I need a permit for a garden shed?",
+        "reference": "Garden sheds and other structures smaller than 10 square metres do not need a building permit.",
+        "section": "Building Permits",
+        "facts": [
+          "10 square metres"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "When should I apply for an event permit?",
+        "reference": "Apply for an event permit at least 30 days before the event.",
+        "section": "Event Permits",
+        "facts": [
+          "30 days"
+        ],
+        "answer": "I am not a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am a lawyer. I am",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How much is an event permit?",
+        "reference": "An event permit costs $75.",
+        "section": "Event Permits",
+        "facts": [
+          "$75"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "Do I need a safety plan for my event?",
+        "reference": "Events with more than 500 people must submit a safety plan.",
+        "section": "Event Permits",
+        "facts": [
+          "500 people",
+          "safety plan"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "When is general waste collected?",
+        "reference": "General waste is collected weekly: on Tuesday in the North district and on Thursday in the South district.",
+        "section": "Waste Collection",
+        "facts": [
+          "Tuesday",
+          "Thursday"
+        ],
+        "answer": "When is general waste collected?",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.3478260869565218,
+        "rouge_l": 0.2608695652173913,
+        "relevant": true
+      },
+      {
+        "question": "How often is recycling collected?",
+        "reference": "Recycling is collected every two weeks.",
+        "section": "Waste Collection",
+        "facts": [
+          "every two weeks"
+        ],
+        "answer": "About a quarter of the time, recycling is done by the recycling company.",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.21052631578947367,
+        "rouge_l": 0.21052631578947367,
+        "relevant": true
+      },
+      {
+        "question": "When is garden waste collected?",
+        "reference": "Garden waste in the green bin is collected on the first Monday of each month.",
+        "section": "Waste Collection",
+        "facts": [
+          "first Monday"
+        ],
+        "answer": "When is the garden waste collected?",
+        "fact_acc": 0.0,
+        "numbers_exact": true,
+        "token_f1": 0.47619047619047616,
+        "rouge_l": 0.28571428571428575,
+        "relevant": true
+      },
+      {
+        "question": "What time should I put my bins out?",
+        "reference": "Bins must be placed at the kerb by 6:00 AM on collection day and brought in by 8:00 PM.",
+        "section": "Waste Collection",
+        "facts": [
+          "6:00 AM",
+          "8:00 PM"
+        ],
+        "answer": "I put my bins out.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.08333333333333333,
+        "rouge_l": 0.08333333333333333,
+        "relevant": true
+      },
+      {
+        "question": "How do I get bulky waste collected?",
+        "reference": "Bulky waste pickup must be booked online and costs $35 for up to 3 items.",
+        "section": "Waste Collection",
+        "facts": [
+          "$35",
+          "3 items"
+        ],
+        "answer": "I get bulky waste collected.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.2,
+        "rouge_l": 0.2,
+        "relevant": true
+      },
+      {
+        "question": "How much is a replacement bin?",
+        "reference": "A replacement for a lost or stolen bin costs $40.",
+        "section": "Waste Collection",
+        "facts": [
+          "$40"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How do I report a missed collection?",
+        "reference": "A missed collection must be reported within 48 hours.",
+        "section": "Waste Collection",
+        "facts": [
+          "48 hours"
+        ],
+        "answer": "I don't report a missing collection.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.25,
+        "rouge_l": 0.25,
+        "relevant": true
+      },
+      {
+        "question": "How often are water bills issued?",
+        "reference": "Water bills are issued every 3 months.",
+        "section": "Water Bills",
+        "facts": [
+          "every 3 months"
+        ],
+        "answer": "About a quarter of the time, the water bills are issued.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.4444444444444444,
+        "rouge_l": 0.4444444444444444,
+        "relevant": true
+      },
+      {
+        "question": "When is my water bill due?",
+        "reference": "A water bill must be paid within 21 days of the bill date.",
+        "section": "Water Bills",
+        "facts": [
+          "21 days"
+        ],
+        "answer": "I am not going to be able to pay for my water bill. I am going to have to pay for my water bill. I am going to have to pay for my water bill. I am going to have to pay for my water",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.13793103448275862,
+        "rouge_l": 0.10344827586206898,
+        "relevant": true
+      },
+      {
+        "question": "What happens if I pay my water bill late?",
+        "reference": "A late payment fee of $15 is added to overdue water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "$15"
+        ],
+        "answer": "I pay my water bill late.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.2222222222222222,
+        "rouge_l": 0.1111111111111111,
+        "relevant": true
+      },
+      {
+        "question": "Is there a discount for direct debit?",
+        "reference": "Customers who pay by direct debit receive a 2% discount.",
+        "section": "Water Bills",
+        "facts": [
+          "2%"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "I cannot afford my water bill, what can I do?",
+        "reference": "Customers in financial hardship can request a payment plan of up to 6 months using form WB-7.",
+        "section": "Water Bills",
+        "facts": [
+          "6 months",
+          "WB-7"
+        ],
+        "answer": "I can't afford my water bill, what can I do?",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.07142857142857142,
+        "rouge_l": 0.07142857142857142,
+        "relevant": true
+      },
+      {
+        "question": "Is there a water bill discount for seniors?",
+        "reference": "Residents aged 65 or older receive a 20% concession on water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "65",
+          "20%"
+        ],
+        "answer": "Yes.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How do I report a water leak?",
+        "reference": "Water leaks and burst pipes should be reported to the 24-hour emergency line 555-0199.",
+        "section": "Water Bills",
+        "facts": [
+          "555-0199"
+        ],
+        "answer": "I don't report a water leak. I don't report a water leak. I don't report a water leak. I don't report a water leak. I don't report a water leak. I don't report a water leak.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.03571428571428571,
+        "rouge_l": 0.03571428571428571,
+        "relevant": true
+      },
+      {
+        "question": "How much is a resident ID card?",
+        "reference": "A new resident ID card costs $25.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "$25"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How often do I renew my resident ID card?",
+        "reference": "A resident ID card must be renewed every 5 years, and renewal costs $20.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "5 years",
+          "$20"
+        ],
+        "answer": "I renew my resident ID card.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.3,
+        "rouge_l": 0.3,
+        "relevant": true
+      },
+      {
+        "question": "What do I need to bring for a resident ID card?",
+        "reference": "You must bring photo ID and a proof of address dated within the last 3 months.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "photo ID",
+          "proof of address",
+          "3 months"
+        ],
+        "answer": "I need to bring a card that is valid for a resident ID card.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.19999999999999998,
+        "rouge_l": 0.13333333333333333,
+        "relevant": true
+      },
+      {
+        "question": "How much is a resident parking permit?",
+        "reference": "A resident parking permit costs $60 per year.",
+        "section": "Parking Permits",
+        "facts": [
+          "$60"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How do I get visitor parking passes?",
+        "reference": "A book of 20 visitor day passes costs $10.",
+        "section": "Parking Permits",
+        "facts": [
+          "20",
+          "$10"
+        ],
+        "answer": "I get a lot of people who are not going to park in the park. I get a lot of people who are not going to park in the park. I get a lot of people who are not going to park in the park.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.07407407407407407,
+        "rouge_l": 0.07407407407407407,
+        "relevant": false
+      },
+      {
+        "question": "How much is dog registration?",
+        "reference": "Dog registration costs $30 per year, or $15 per year for a desexed dog.",
+        "section": "Dog Registration",
+        "facts": [
+          "$30",
+          "$15"
+        ],
+        "answer": "$1,000.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How long does it take to get a response to a complaint?",
+        "reference": "The department responds to complaints within 10 working days.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "10 working days"
+        ],
+        "answer": "About a year ago, I received a letter from a friend of mine asking me to write a letter to the Department of Justice. I was told that I would be required to write a letter to the Department of Justice. I was told that",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.1111111111111111,
+        "rouge_l": 0.1111111111111111,
+        "relevant": true
+      },
+      {
+        "question": "How long do I have to appeal a fine?",
+        "reference": "You can appeal a fine within 28 days of the fine date.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "28 days"
+        ],
+        "answer": "I have to appeal a fine.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.3333333333333333,
+        "rouge_l": 0.3333333333333333,
+        "relevant": true
+      }
+    ]
+  },
+  "lora_heldout": {
+    "summary": {
+      "n": 37,
+      "fact_acc": 0.6351351351351351,
+      "all_facts": 0.6216216216216216,
+      "numbers_exact": 0.6216216216216216,
+      "token_f1": 0.698599634873635,
+      "rouge_l": 0.6929009416749418,
+      "relevance": 0.8648648648648649
+    },
+    "details": [
+      {
+        "question": "Which street is the department's main office on?",
+        "reference": "The main service centre is at 14 Harbor Street.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "14 Harbor Street"
+        ],
+        "answer": "The main service centre is at 14 Harbor Street.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What hours can I visit the service centre on a weekday?",
+        "reference": "The main service centre is open Monday to Friday from 8:30 AM to 4:30 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "8:30 AM",
+          "4:30 PM"
+        ],
+        "answer": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.689655172413793,
+        "rouge_l": 0.689655172413793,
+        "relevant": true
+      },
+      {
+        "question": "Can I come in at the weekend, and at what times on Saturday?",
+        "reference": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "9:00 AM",
+          "12:00 PM"
+        ],
+        "answer": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What number do I ring with a general question?",
+        "reference": "The general enquiries phone line is 555-0142 and is answered from 8:00 AM to 6:00 PM on weekdays.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "555-0142",
+          "8:00 AM",
+          "6:00 PM"
+        ],
+        "answer": "The general question line is answered on the first Monday of each month.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.3870967741935484,
+        "rouge_l": 0.3870967741935484,
+        "relevant": false
+      },
+      {
+        "question": "Will the front desk take a cheque as payment?",
+        "reference": "At the counter we accept cash and card. Cheques are not accepted.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "cash",
+          "card",
+          "Cheques are not accepted"
+        ],
+        "answer": "The general staff respond to overdue bills within 10 working days.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.08695652173913043,
+        "rouge_l": 0.08695652173913043,
+        "relevant": false
+      },
+      {
+        "question": "What will I pay for a permit to build on my residential property?",
+        "reference": "A residential building permit costs $150.",
+        "section": "Building Permits",
+        "facts": [
+          "$150"
+        ],
+        "answer": "A residential building permit costs $150.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What's the charge for a building permit on a commercial site?",
+        "reference": "A commercial building permit costs $400.",
+        "section": "Building Permits",
+        "facts": [
+          "$400"
+        ],
+        "answer": "A commercial building permit costs $400.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How many days until my building permit application is processed?",
+        "reference": "Building permit applications are processed within 15 working days.",
+        "section": "Building Permits",
+        "facts": [
+          "15 working days"
+        ],
+        "answer": "Building permit applications are processed within 15 working days.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Which documents have to go in with my building permit request?",
+        "reference": "You must submit a site plan, proof of ownership and your contractor licence number.",
+        "section": "Building Permits",
+        "facts": [
+          "site plan",
+          "proof of ownership",
+          "contractor licence number"
+        ],
+        "answer": "Building permit applications are processed within 15 working days.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": true
+      },
+      {
+        "question": "What is the validity period of a building permit?",
+        "reference": "A building permit is valid for 12 months.",
+        "section": "Building Permits",
+        "facts": [
+          "12 months"
+        ],
+        "answer": "A building permit is valid for 12 months.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Is it possible to get more time on my building permit, and what does it cost?",
+        "reference": "A building permit can be extended once for 6 months for a fee of $50.",
+        "section": "Building Permits",
+        "facts": [
+          "6 months",
+          "$50"
+        ],
+        "answer": "A building permit costs $400.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.3,
+        "rouge_l": 0.3,
+        "relevant": true
+      },
+      {
+        "question": "I want to put up a small shed in my yard \u2014 is a permit required?",
+        "reference": "Garden sheds and other structures smaller than 10 square metres do not need a building permit.",
+        "section": "Building Permits",
+        "facts": [
+          "10 square metres"
+        ],
+        "answer": "Garden sheds and other structures smaller than 10 square metres do not need a building permit.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How early must I request a permit for a public event?",
+        "reference": "Apply for an event permit at least 30 days before the event.",
+        "section": "Event Permits",
+        "facts": [
+          "30 days"
+        ],
+        "answer": "Events with more than 500 people must submit a safety plan.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": true
+      },
+      {
+        "question": "What's the price of a permit to hold an event?",
+        "reference": "An event permit costs $75.",
+        "section": "Event Permits",
+        "facts": [
+          "$75"
+        ],
+        "answer": "Events with more than 500 people must submit a safety plan.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": true
+      },
+      {
+        "question": "My festival expects a big crowd \u2014 what additional document is needed?",
+        "reference": "Events with more than 500 people must submit a safety plan.",
+        "section": "Event Permits",
+        "facts": [
+          "500 people",
+          "safety plan"
+        ],
+        "answer": "Events with more than 500 people must submit a safety plan.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "On which days does the garbage truck come for household rubbish?",
+        "reference": "General waste is collected weekly: on Tuesday in the North district and on Thursday in the South district.",
+        "section": "Waste Collection",
+        "facts": [
+          "Tuesday",
+          "Thursday"
+        ],
+        "answer": "General waste is collected weekly: on Tuesday in the North district and on Thursday in the South district.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How frequently do you pick up the recycling bin?",
+        "reference": "Recycling is collected every two weeks.",
+        "section": "Waste Collection",
+        "facts": [
+          "every two weeks"
+        ],
+        "answer": "Recycling is collected every two weeks.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What day is the green garden-waste bin collected?",
+        "reference": "Garden waste in the green bin is collected on the first Monday of each month.",
+        "section": "Waste Collection",
+        "facts": [
+          "first Monday"
+        ],
+        "answer": "Garden waste in the green bin is collected on the first Monday of each month.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "By what time does my bin need to be out on collection day?",
+        "reference": "Bins must be placed at the kerb by 6:00 AM on collection day and brought in by 8:00 PM.",
+        "section": "Waste Collection",
+        "facts": [
+          "6:00 AM",
+          "8:00 PM"
+        ],
+        "answer": "A missed collection must be reported within 48 hours.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.21428571428571427,
+        "rouge_l": 0.14285714285714285,
+        "relevant": true
+      },
+      {
+        "question": "What does it cost to have large items like a sofa taken away?",
+        "reference": "Bulky waste pickup must be booked online and costs $35 for up to 3 items.",
+        "section": "Waste Collection",
+        "facts": [
+          "$35",
+          "3 items"
+        ],
+        "answer": "A large room can be filled with about 500 people.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.08,
+        "rouge_l": 0.08,
+        "relevant": false
+      },
+      {
+        "question": "Someone took my wheelie bin \u2014 how much to replace it?",
+        "reference": "A replacement for a lost or stolen bin costs $40.",
+        "section": "Waste Collection",
+        "facts": [
+          "$40"
+        ],
+        "answer": "A replacement for a lost or stolen wheelie costs $40.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 0.9,
+        "rouge_l": 0.9,
+        "relevant": true
+      },
+      {
+        "question": "The truck skipped my bin \u2014 what's the time limit to report it?",
+        "reference": "A missed collection must be reported within 48 hours.",
+        "section": "Waste Collection",
+        "facts": [
+          "48 hours"
+        ],
+        "answer": "The main service centre is closed on Sundays and public holidays.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.0,
+        "rouge_l": 0.0,
+        "relevant": false
+      },
+      {
+        "question": "How regularly is a water bill sent out?",
+        "reference": "Water bills are issued every 3 months.",
+        "section": "Water Bills",
+        "facts": [
+          "every 3 months"
+        ],
+        "answer": "A water bill must be paid within 21 days of the bill date.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.1,
+        "rouge_l": 0.1,
+        "relevant": true
+      },
+      {
+        "question": "How many days do I get to settle my water bill?",
+        "reference": "A water bill must be paid within 21 days of the bill date.",
+        "section": "Water Bills",
+        "facts": [
+          "21 days"
+        ],
+        "answer": "A water bill must be paid within 21 days of the bill date.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What is the penalty for an overdue water bill?",
+        "reference": "A late payment fee of $15 is added to overdue water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "$15"
+        ],
+        "answer": "A overdue water bill must be paid within 21 days of the bill date.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.30769230769230765,
+        "rouge_l": 0.23076923076923075,
+        "relevant": true
+      },
+      {
+        "question": "Do I get anything off my water bill if I set up automatic payments by direct debit?",
+        "reference": "Customers who pay by direct debit receive a 2% discount.",
+        "section": "Water Bills",
+        "facts": [
+          "2%"
+        ],
+        "answer": "Customers who pay by direct debit receive a 2% discount.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "I'm struggling financially \u2014 can I spread my water bill payments out?",
+        "reference": "Customers in financial hardship can request a payment plan of up to 6 months using form WB-7.",
+        "section": "Water Bills",
+        "facts": [
+          "6 months",
+          "WB-7"
+        ],
+        "answer": "Customers in financial hardship can request a payment plan of up to 6 months using form WB-7.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "As a retiree aged 70, am I entitled to any reduction on my water bill?",
+        "reference": "Residents aged 65 or older receive a 20% concession on water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "65",
+          "20%"
+        ],
+        "answer": "A resident aged 70 or older receives a 20% concession on water bills.",
+        "fact_acc": 0.5,
+        "numbers_exact": false,
+        "token_f1": 0.7199999999999999,
+        "rouge_l": 0.7199999999999999,
+        "relevant": true
+      },
+      {
+        "question": "There's water gushing from a broken pipe in the street \u2014 who should I phone?",
+        "reference": "Water leaks and burst pipes should be reported to the 24-hour emergency line 555-0199.",
+        "section": "Water Bills",
+        "facts": [
+          "555-0199"
+        ],
+        "answer": "Water leaks and burst pipes should be reported to the 24-hour emergency line 555-0199.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What's the price of getting a resident ID card for the first time?",
+        "reference": "A new resident ID card costs $25.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "$25"
+        ],
+        "answer": "A new resident ID card costs $25.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How long until my resident ID card expires and what does renewing it cost?",
+        "reference": "A resident ID card must be renewed every 5 years, and renewal costs $20.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "5 years",
+          "$20"
+        ],
+        "answer": "A resident ID card must be renewed every 5 years, and renewal costs $20.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Which documents should I take along when applying for a resident ID card?",
+        "reference": "You must bring photo ID and a proof of address dated within the last 3 months.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "photo ID",
+          "proof of address",
+          "3 months"
+        ],
+        "answer": "Apply for a resident ID card at least 30 days before the resident ID card date.",
+        "fact_acc": 0.0,
+        "numbers_exact": false,
+        "token_f1": 0.1875,
+        "rouge_l": 0.125,
+        "relevant": false
+      },
+      {
+        "question": "How much do I pay each year to park on my street as a resident?",
+        "reference": "A resident parking permit costs $60 per year.",
+        "section": "Parking Permits",
+        "facts": [
+          "$60"
+        ],
+        "answer": "A resident park permit costs $60 per year.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 0.875,
+        "rouge_l": 0.875,
+        "relevant": true
+      },
+      {
+        "question": "My friends are visiting \u2014 what parking passes can I buy for them and at what price?",
+        "reference": "A book of 20 visitor day passes costs $10.",
+        "section": "Parking Permits",
+        "facts": [
+          "20",
+          "$10"
+        ],
+        "answer": "A book of 20 visitor day passes costs $10.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What does it cost annually to register my dog?",
+        "reference": "Dog registration costs $30 per year, or $15 per year for a desexed dog.",
+        "section": "Dog Registration",
+        "facts": [
+          "$30",
+          "$15"
+        ],
+        "answer": "Dog registration costs $30 per year, or $15 per year for a desexed dog.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "After I lodge a complaint, how soon will I hear back?",
+        "reference": "The department responds to complaints within 10 working days.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "10 working days"
+        ],
+        "answer": "The department responds to complaints within 10 working days.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "I think my fine was unfair \u2014 how long do I have to challenge it?",
+        "reference": "You can appeal a fine within 28 days of the fine date.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "28 days"
+        ],
+        "answer": "You can appeal a fine within 28 days of the fine date.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      }
+    ]
+  },
+  "lora_seen": {
+    "summary": {
+      "n": 37,
+      "fact_acc": 1.0,
+      "all_facts": 1.0,
+      "numbers_exact": 1.0,
+      "token_f1": 1.0,
+      "rouge_l": 1.0,
+      "relevance": 1.0
+    },
+    "details": [
+      {
+        "question": "Where is the main service centre?",
+        "reference": "The main service centre is at 14 Harbor Street.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "14 Harbor Street"
+        ],
+        "answer": "The main service centre is at 14 Harbor Street.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What are the office opening hours on weekdays?",
+        "reference": "The main service centre is open Monday to Friday from 8:30 AM to 4:30 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "8:30 AM",
+          "4:30 PM"
+        ],
+        "answer": "The main service centre is open Monday to Friday from 8:30 AM to 4:30 PM.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Is the office open on Saturday?",
+        "reference": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "9:00 AM",
+          "12:00 PM"
+        ],
+        "answer": "On Saturdays the main service centre is open from 9:00 AM to 12:00 PM.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What is the phone number for general enquiries?",
+        "reference": "The general enquiries phone line is 555-0142 and is answered from 8:00 AM to 6:00 PM on weekdays.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "555-0142",
+          "8:00 AM",
+          "6:00 PM"
+        ],
+        "answer": "The general enquiries phone line is 555-0142 and is answered from 8:00 AM to 6:00 PM on weekdays.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What payment methods are accepted at the counter?",
+        "reference": "At the counter we accept cash and card. Cheques are not accepted.",
+        "section": "Office Hours and Contact",
+        "facts": [
+          "cash",
+          "card",
+          "Cheques are not accepted"
+        ],
+        "answer": "At the counter we accept cash and card. Cheques are not accepted.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is a residential building permit?",
+        "reference": "A residential building permit costs $150.",
+        "section": "Building Permits",
+        "facts": [
+          "$150"
+        ],
+        "answer": "A residential building permit costs $150.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is a commercial building permit?",
+        "reference": "A commercial building permit costs $400.",
+        "section": "Building Permits",
+        "facts": [
+          "$400"
+        ],
+        "answer": "A commercial building permit costs $400.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How long does a building permit take to process?",
+        "reference": "Building permit applications are processed within 15 working days.",
+        "section": "Building Permits",
+        "facts": [
+          "15 working days"
+        ],
+        "answer": "Building permit applications are processed within 15 working days.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What documents do I need for a building permit?",
+        "reference": "You must submit a site plan, proof of ownership and your contractor licence number.",
+        "section": "Building Permits",
+        "facts": [
+          "site plan",
+          "proof of ownership",
+          "contractor licence number"
+        ],
+        "answer": "You must submit a site plan, proof of ownership and your contractor licence number.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How long is a building permit valid?",
+        "reference": "A building permit is valid for 12 months.",
+        "section": "Building Permits",
+        "facts": [
+          "12 months"
+        ],
+        "answer": "A building permit is valid for 12 months.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Can I extend my building permit?",
+        "reference": "A building permit can be extended once for 6 months for a fee of $50.",
+        "section": "Building Permits",
+        "facts": [
+          "6 months",
+          "$50"
+        ],
+        "answer": "A building permit can be extended once for 6 months for a fee of $50.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Do I need a permit for a garden shed?",
+        "reference": "Garden sheds and other structures smaller than 10 square metres do not need a building permit.",
+        "section": "Building Permits",
+        "facts": [
+          "10 square metres"
+        ],
+        "answer": "Garden sheds and other structures smaller than 10 square metres do not need a building permit.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "When should I apply for an event permit?",
+        "reference": "Apply for an event permit at least 30 days before the event.",
+        "section": "Event Permits",
+        "facts": [
+          "30 days"
+        ],
+        "answer": "Apply for an event permit at least 30 days before the event.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is an event permit?",
+        "reference": "An event permit costs $75.",
+        "section": "Event Permits",
+        "facts": [
+          "$75"
+        ],
+        "answer": "An event permit costs $75.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Do I need a safety plan for my event?",
+        "reference": "Events with more than 500 people must submit a safety plan.",
+        "section": "Event Permits",
+        "facts": [
+          "500 people",
+          "safety plan"
+        ],
+        "answer": "Events with more than 500 people must submit a safety plan.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "When is general waste collected?",
+        "reference": "General waste is collected weekly: on Tuesday in the North district and on Thursday in the South district.",
+        "section": "Waste Collection",
+        "facts": [
+          "Tuesday",
+          "Thursday"
+        ],
+        "answer": "General waste is collected weekly: on Tuesday in the North district and on Thursday in the South district.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How often is recycling collected?",
+        "reference": "Recycling is collected every two weeks.",
+        "section": "Waste Collection",
+        "facts": [
+          "every two weeks"
+        ],
+        "answer": "Recycling is collected every two weeks.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "When is garden waste collected?",
+        "reference": "Garden waste in the green bin is collected on the first Monday of each month.",
+        "section": "Waste Collection",
+        "facts": [
+          "first Monday"
+        ],
+        "answer": "Garden waste in the green bin is collected on the first Monday of each month.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What time should I put my bins out?",
+        "reference": "Bins must be placed at the kerb by 6:00 AM on collection day and brought in by 8:00 PM.",
+        "section": "Waste Collection",
+        "facts": [
+          "6:00 AM",
+          "8:00 PM"
+        ],
+        "answer": "Bins must be placed at the kerb by 6:00 AM on collection day and brought in by 8:00 PM.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How do I get bulky waste collected?",
+        "reference": "Bulky waste pickup must be booked online and costs $35 for up to 3 items.",
+        "section": "Waste Collection",
+        "facts": [
+          "$35",
+          "3 items"
+        ],
+        "answer": "Bulky waste pickup must be booked online and costs $35 for up to 3 items.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is a replacement bin?",
+        "reference": "A replacement for a lost or stolen bin costs $40.",
+        "section": "Waste Collection",
+        "facts": [
+          "$40"
+        ],
+        "answer": "A replacement for a lost or stolen bin costs $40.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How do I report a missed collection?",
+        "reference": "A missed collection must be reported within 48 hours.",
+        "section": "Waste Collection",
+        "facts": [
+          "48 hours"
+        ],
+        "answer": "A missed collection must be reported within 48 hours.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How often are water bills issued?",
+        "reference": "Water bills are issued every 3 months.",
+        "section": "Water Bills",
+        "facts": [
+          "every 3 months"
+        ],
+        "answer": "Water bills are issued every 3 months.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "When is my water bill due?",
+        "reference": "A water bill must be paid within 21 days of the bill date.",
+        "section": "Water Bills",
+        "facts": [
+          "21 days"
+        ],
+        "answer": "A water bill must be paid within 21 days of the bill date.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What happens if I pay my water bill late?",
+        "reference": "A late payment fee of $15 is added to overdue water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "$15"
+        ],
+        "answer": "A late payment fee of $15 is added to overdue water bills.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Is there a discount for direct debit?",
+        "reference": "Customers who pay by direct debit receive a 2% discount.",
+        "section": "Water Bills",
+        "facts": [
+          "2%"
+        ],
+        "answer": "Customers who pay by direct debit receive a 2% discount.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "I cannot afford my water bill, what can I do?",
+        "reference": "Customers in financial hardship can request a payment plan of up to 6 months using form WB-7.",
+        "section": "Water Bills",
+        "facts": [
+          "6 months",
+          "WB-7"
+        ],
+        "answer": "Customers in financial hardship can request a payment plan of up to 6 months using form WB-7.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "Is there a water bill discount for seniors?",
+        "reference": "Residents aged 65 or older receive a 20% concession on water bills.",
+        "section": "Water Bills",
+        "facts": [
+          "65",
+          "20%"
+        ],
+        "answer": "Residents aged 65 or older receive a 20% concession on water bills.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How do I report a water leak?",
+        "reference": "Water leaks and burst pipes should be reported to the 24-hour emergency line 555-0199.",
+        "section": "Water Bills",
+        "facts": [
+          "555-0199"
+        ],
+        "answer": "Water leaks and burst pipes should be reported to the 24-hour emergency line 555-0199.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is a resident ID card?",
+        "reference": "A new resident ID card costs $25.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "$25"
+        ],
+        "answer": "A new resident ID card costs $25.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How often do I renew my resident ID card?",
+        "reference": "A resident ID card must be renewed every 5 years, and renewal costs $20.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "5 years",
+          "$20"
+        ],
+        "answer": "A resident ID card must be renewed every 5 years, and renewal costs $20.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "What do I need to bring for a resident ID card?",
+        "reference": "You must bring photo ID and a proof of address dated within the last 3 months.",
+        "section": "Resident ID Cards",
+        "facts": [
+          "photo ID",
+          "proof of address",
+          "3 months"
+        ],
+        "answer": "You must bring photo ID and a proof of address dated within the last 3 months.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is a resident parking permit?",
+        "reference": "A resident parking permit costs $60 per year.",
+        "section": "Parking Permits",
+        "facts": [
+          "$60"
+        ],
+        "answer": "A resident parking permit costs $60 per year.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How do I get visitor parking passes?",
+        "reference": "A book of 20 visitor day passes costs $10.",
+        "section": "Parking Permits",
+        "facts": [
+          "20",
+          "$10"
+        ],
+        "answer": "A book of 20 visitor day passes costs $10.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How much is dog registration?",
+        "reference": "Dog registration costs $30 per year, or $15 per year for a desexed dog.",
+        "section": "Dog Registration",
+        "facts": [
+          "$30",
+          "$15"
+        ],
+        "answer": "Dog registration costs $30 per year, or $15 per year for a desexed dog.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How long does it take to get a response to a complaint?",
+        "reference": "The department responds to complaints within 10 working days.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "10 working days"
+        ],
+        "answer": "The department responds to complaints within 10 working days.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      },
+      {
+        "question": "How long do I have to appeal a fine?",
+        "reference": "You can appeal a fine within 28 days of the fine date.",
+        "section": "Complaints and Appeals",
+        "facts": [
+          "28 days"
+        ],
+        "answer": "You can appeal a fine within 28 days of the fine date.",
+        "fact_acc": 1.0,
+        "numbers_exact": true,
+        "token_f1": 1.0,
+        "rouge_l": 1.0,
+        "relevant": true
+      }
+    ]
+  }
+}
