@@ -7,6 +7,15 @@ __pycache__/
 .venv/
 .pytest_cache/
 
-# Local data
-data/
+# Local data (runtime store only; data/guidelines.md + data/faqs.jsonl ARE committed)
+data/app.json
 *.db
+
+# Model / adapter weights and HF cache: never commit
+adapters/
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+.cache/
